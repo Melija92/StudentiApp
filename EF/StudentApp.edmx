@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="StudentAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Fakultet">
+          <Key>
+            <PropertyRef Name="FakultetId" />
+          </Key>
+          <Property Name="FakultetId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="50" />
+          <Property Name="OIB" Type="bigint" />
+          <Property Name="Adresa" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ime" Type="varchar" MaxLength="50" />
+          <Property Name="Prezime" Type="varchar" MaxLength="30" />
+          <Property Name="JMBAG" Type="bigint" Nullable="false" />
+          <Property Name="FakultetId" Type="int" />
+        </EntityType>
+        <Association Name="FK__Student__Fakulte__276EDEB3">
+          <End Role="Fakultet" Type="Self.Fakultet" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fakultet">
+              <PropertyRef Name="FakultetId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="FakultetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="StudentAppModelStoreContainer">
+          <EntitySet Name="Fakultet" EntityType="Self.Fakultet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Student__Fakulte__276EDEB3" Association="Self.FK__Student__Fakulte__276EDEB3">
+            <End Role="Fakultet" EntitySet="Fakultet" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StudentAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Fakultet">
+          <Key>
+            <PropertyRef Name="FakultetId" />
+          </Key>
+          <Property Name="FakultetId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OIB" Type="Int64" />
+          <Property Name="Adresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Student" Relationship="Self.FK__Student__Fakulte__276EDEB3" FromRole="Fakultet" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Prezime" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="JMBAG" Type="Int64" Nullable="false" />
+          <Property Name="FakultetId" Type="Int32" />
+          <NavigationProperty Name="Fakultet" Relationship="Self.FK__Student__Fakulte__276EDEB3" FromRole="Student" ToRole="Fakultet" />
+        </EntityType>
+        <Association Name="FK__Student__Fakulte__276EDEB3">
+          <End Role="Fakultet" Type="Self.Fakultet" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fakultet">
+              <PropertyRef Name="FakultetId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="FakultetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="StudentAppEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Fakultet" EntityType="Self.Fakultet" />
+          <EntitySet Name="Student" EntityType="Self.Student" />
+          <AssociationSet Name="FK__Student__Fakulte__276EDEB3" Association="Self.FK__Student__Fakulte__276EDEB3">
+            <End Role="Fakultet" EntitySet="Fakultet" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StudentAppModelStoreContainer" CdmEntityContainer="StudentAppEntities">
+          <EntitySetMapping Name="Fakultet">
+            <EntityTypeMapping TypeName="StudentAppModel.Fakultet">
+              <MappingFragment StoreEntitySet="Fakultet">
+                <ScalarProperty Name="FakultetId" ColumnName="FakultetId" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="OIB" ColumnName="OIB" />
+                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Student">
+            <EntityTypeMapping TypeName="StudentAppModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="JMBAG" ColumnName="JMBAG" />
+                <ScalarProperty Name="FakultetId" ColumnName="FakultetId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
