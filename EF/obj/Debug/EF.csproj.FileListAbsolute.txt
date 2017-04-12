@@ -8,3 +8,23 @@ c:\users\marko\documents\visual studio 2015\Projects\StudentApp\EF\bin\Debug\Ent
 c:\users\marko\documents\visual studio 2015\Projects\StudentApp\EF\obj\Debug\EF.csprojResolveAssemblyReference.cache
 c:\users\marko\documents\visual studio 2015\Projects\StudentApp\EF\obj\Debug\EF.dll
 c:\users\marko\documents\visual studio 2015\Projects\StudentApp\EF\obj\Debug\EF.pdb
+D:\Lokalno programiranje\StudentiApp\EF\bin\Debug\EF.dll.config
+D:\Lokalno programiranje\StudentiApp\EF\bin\Debug\EF.dll
+D:\Lokalno programiranje\StudentiApp\EF\bin\Debug\EF.pdb
+D:\Lokalno programiranje\StudentiApp\EF\bin\Debug\EntityFramework.dll
+D:\Lokalno programiranje\StudentiApp\EF\bin\Debug\EntityFramework.SqlServer.dll
+D:\Lokalno programiranje\StudentiApp\EF\bin\Debug\EntityFramework.xml
+D:\Lokalno programiranje\StudentiApp\EF\bin\Debug\EntityFramework.SqlServer.xml
+D:\Lokalno programiranje\StudentiApp\EF\obj\Debug\EF.csprojResolveAssemblyReference.cache
+D:\Lokalno programiranje\StudentiApp\EF\obj\Debug\EF.dll
+D:\Lokalno programiranje\StudentiApp\EF\obj\Debug\EF.pdb
+F:\Visual Studio Projects\StudentApp\EF\bin\Debug\EF.dll.config
+F:\Visual Studio Projects\StudentApp\EF\bin\Debug\EF.dll
+F:\Visual Studio Projects\StudentApp\EF\bin\Debug\EF.pdb
+F:\Visual Studio Projects\StudentApp\EF\bin\Debug\EntityFramework.dll
+F:\Visual Studio Projects\StudentApp\EF\bin\Debug\EntityFramework.SqlServer.dll
+F:\Visual Studio Projects\StudentApp\EF\bin\Debug\EntityFramework.xml
+F:\Visual Studio Projects\StudentApp\EF\bin\Debug\EntityFramework.SqlServer.xml
+F:\Visual Studio Projects\StudentApp\EF\obj\Debug\EF.csprojResolveAssemblyReference.cache
+F:\Visual Studio Projects\StudentApp\EF\obj\Debug\EF.dll
+F:\Visual Studio Projects\StudentApp\EF\obj\Debug\EF.pdb
