@@ -2,9 +2,9 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
+<div class="container">
     <h1>Aplikacija o studentima, fakultetima, ocijenama i tako dalje...</h1>
-    <p> - Aplikacija je napisana u JavaScriptu.</p>
+    <p> - Aplikacija je napisana u JavaScriptu i C#-u.</p>
 </div>
 
 <div class="row">
@@ -17,4 +17,10 @@
         </p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
+
+    <button onclick="document.getElementById('myImage').src='/Content/Slike/pic_bulbon.gif'">Turn on the light</button>
+
+    <img id="myImage" src="~/Content/Slike/pic_bulboff.gif" style="width:100px">
+
+    <button onclick="document.getElementById('myImage').src='/Content/Slike/pic_bulboff.gif'">Turn off the light</button>
 </div>
