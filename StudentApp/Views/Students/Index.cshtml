@@ -7,47 +7,53 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Dodaj studenta", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Ime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Prezime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.JMBAG)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fakultet.Naziv)
-        </th>
-        <th></th>
-    </tr>
+<div class="col-sm-8">
+    <input type="text" class="form-control" placeholder="Search">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prezime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JMBAG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fakultet.Naziv)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Prezime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.JMBAG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fakultet.Naziv)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StudentId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StudentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StudentId })
-        </td>
-    </tr>
-}
-</table>
-<p>
-  @Html.ActionLink("Dodaj novi fakultet","Create","Fakultets")
-</p>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prezime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JMBAG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fakultet.Naziv)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.StudentId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
+                </td>
+            </tr>
+        }
+    </table>
+    <p id="demo"></p>
+</div>
+<div class="col-sm-4"><img class="img-responsive" src="~/Content/Slike/fakultet1.jpg"</div>
+    <p>
+        @Html.ActionLink("Dodaj novi fakultet", "Create", "Fakultets")
+    </p>
